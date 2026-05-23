@@ -1,0 +1,16 @@
+{
+  "$schema": "../json-schema/energy-utilities-meter-reading-schema.json",
+  "id": "utilityapi:int-9837451:2026-05-22T15:00:00Z",
+  "usagePointId": "utilityapi:meter-512873",
+  "meterId": "utilityapi:device-512873",
+  "readingType": "electricity.usage",
+  "intervalStart": "2026-05-22T15:00:00Z",
+  "intervalLength": 900,
+  "value": 0.482,
+  "unit": "kWh",
+  "quality": "valid",
+  "source": "ami",
+  "powerOfTenMultiplier": 0,
+  "tariffRider": "TOU-PEAK",
+  "providerId": "utilityapi"
+}

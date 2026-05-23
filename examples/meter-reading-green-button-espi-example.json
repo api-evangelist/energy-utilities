@@ -1,0 +1,14 @@
+{
+  "$schema": "../json-schema/energy-utilities-meter-reading-schema.json",
+  "id": "espi:RetailCustomer/9/UsagePoint/3/MeterReading/1/IntervalBlock/1/IntervalReading/0",
+  "usagePointId": "espi:RetailCustomer/9/UsagePoint/3",
+  "readingType": "electricity.delivered",
+  "intervalStart": "2026-05-22T14:00:00Z",
+  "intervalLength": 3600,
+  "value": 1245,
+  "unit": "Wh",
+  "quality": "validated",
+  "source": "green-button",
+  "powerOfTenMultiplier": 0,
+  "providerId": "green-button"
+}

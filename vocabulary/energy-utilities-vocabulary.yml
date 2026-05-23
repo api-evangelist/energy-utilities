@@ -1,0 +1,222 @@
+name: Energy and Utilities Vocabulary
+description: >-
+  Domain vocabulary for the energy-utilities topic profile. Defines the
+  core terms used across utility data integration APIs, ISO/RTO market
+  APIs, federal energy data APIs, renewable research APIs, weather APIs,
+  EV charging interoperability protocols, demand-response standards,
+  and the Green Button family of consumer energy data specs. Tags align
+  with the apis.yml and JSON-LD context used by this repo.
+url: https://raw.githubusercontent.com/api-evangelist/energy-utilities/refs/heads/main/vocabulary/energy-utilities-vocabulary.yml
+created: '2026-05-23'
+modified: '2026-05-23'
+
+namespaces:
+  - prefix: eu
+    uri: https://apievangelist.com/topics/energy-utilities/ns/
+  - prefix: espi
+    uri: http://naesb.org/espi#
+  - prefix: qudt
+    uri: http://qudt.org/schema/qudt/
+  - prefix: schema
+    uri: https://schema.org/
+
+terms:
+  - term: UsagePoint
+    description: >-
+      A service delivery point at which a utility delivers commodity service
+      (electricity, gas, water, steam) to a customer. Parent record for
+      MeterReading observations. Aligned with the Green Button ESPI
+      UsagePoint resource.
+    aliases: [ServiceDeliveryPoint, SDP, ServicePoint, Premise]
+
+  - term: MeterReading
+    description: >-
+      A single point-in-time or interval measurement captured by a utility
+      meter for a UsagePoint. Carries a value, unit, interval, and
+      semantic readingType.
+    aliases: [IntervalReading, Reading, Measurement]
+
+  - term: ReadingType
+    description: >-
+      The semantic classification of what a meter measured — combination
+      of commodity, flow direction (delivered / received), and measurement
+      kind (energy / demand / reactive). Mirrors ESPI ReadingType.
+    examples: [electricity.usage, electricity.demand, electricity.net, natural-gas.usage]
+
+  - term: IntervalBlock
+    description: >-
+      A group of contiguous IntervalReadings covering a defined time
+      window. ESPI structures meter data as IntervalBlock -> IntervalReading.
+
+  - term: EnergyDataPoint
+    description: >-
+      Generalized observation envelope used across the catalog — covers
+      meter intervals, ISO market prices, EIA time series, NREL solar
+      irradiance, weather drivers, EV-charging telemetry, and DERMS
+      device telemetry.
+
+  - term: AMI
+    description: >-
+      Advanced Metering Infrastructure — two-way communicating smart
+      meter deployment that produces sub-hourly interval data.
+    aliases: [Smart Meter, Advanced Metering Infrastructure]
+
+  - term: AMR
+    description: >-
+      Automated Meter Reading — one-way meter data collection that
+      pre-dated AMI. Typically produces monthly reads, no intervals.
+
+  - term: GreenButton
+    description: >-
+      Consumer energy data standard governed by the Green Button
+      Alliance. Includes Download My Data (DMD), Connect My Data (CMD),
+      and the underlying ESPI REST/Atom protocol.
+    aliases: [Green Button, ESPI, CDS, Connect My Data, Download My Data]
+
+  - term: ESPI
+    description: >-
+      Energy Services Provider Interface — the NAESB technical standard
+      underlying Green Button. Defines UsagePoint, MeterReading,
+      IntervalBlock, ReadingType, and the OAuth2 authorization flow.
+
+  - term: CDS
+    description: >-
+      Consumer Data Specification — the Green Button Alliance working
+      group's next-generation profile for consumer energy data sharing.
+
+  - term: OpenADR
+    description: >-
+      Open Automated Demand Response — open, two-way information
+      exchange model and Smart Grid standard for automating demand
+      response events and orchestrating distributed energy resources.
+      OpenADR 3.0 is the current generation.
+
+  - term: DemandResponse
+    description: >-
+      Programs in which retail customers reduce or shift electricity
+      consumption in response to a signal from a utility, aggregator,
+      or grid operator — usually compensated.
+    aliases: [DR, Demand Response]
+
+  - term: DER
+    description: >-
+      Distributed Energy Resource — any generation, storage, or
+      controllable load asset located on the distribution network or
+      behind the customer meter (rooftop solar, behind-the-meter
+      battery, EV charger, controllable load).
+    aliases: [Distributed Energy Resource]
+
+  - term: DERMS
+    description: >-
+      Distributed Energy Resource Management System — software platform
+      that aggregates, monitors, dispatches, and optimizes DERs. Often
+      wraps OpenADR for signaling and IEEE 2030.5 for device control.
+
+  - term: VPP
+    description: >-
+      Virtual Power Plant — an aggregation of DERs operated as a single
+      dispatchable resource in a wholesale or capacity market.
+
+  - term: OCPP
+    description: >-
+      Open Charge Point Protocol — open communication protocol between
+      EV charging stations and charging management systems, published
+      by the Open Charge Alliance. OCPP 2.1 is the current version.
+
+  - term: OCPI
+    description: >-
+      Open Charge Point Interface — back-office-to-back-office
+      interoperability protocol enabling roaming between Charge Point
+      Operators and e-Mobility Service Providers. Latest spec OCPI 2.3.
+
+  - term: ISO15118
+    description: >-
+      ISO 15118 — vehicle-to-charger plug-and-charge and bidirectional
+      power transfer standard. ISO 15118-20 enables AC and DC V2X.
+
+  - term: ISO_RTO
+    description: >-
+      Independent System Operator / Regional Transmission Organization
+      — entities that operate the wholesale electricity market and
+      transmission grid across a region (CAISO, ERCOT, PJM, MISO,
+      ISO-NE, NYISO, SPP).
+    aliases: [ISO/RTO, Grid Operator]
+
+  - term: LMP
+    description: >-
+      Locational Marginal Price — the marginal cost of supplying the
+      next megawatt-hour of electricity at a specific pricing node in
+      an ISO/RTO wholesale market.
+    aliases: [Locational Marginal Price, Nodal Price]
+
+  - term: BalancingAuthority
+    description: >-
+      NERC-registered entity responsible for balancing electricity
+      supply and demand within its area. Identified by a short code
+      (e.g., CISO, ERCO, PJM, MISO, NYIS).
+
+  - term: AncillaryServices
+    description: >-
+      Wholesale market products that maintain grid reliability —
+      regulation, spinning reserve, non-spinning reserve, replacement
+      reserve, voltage support, black start.
+
+  - term: CapacityMarket
+    description: >-
+      Forward market for resource adequacy commitments in regions that
+      run one (PJM, ISO-NE, NYISO, MISO).
+
+  - term: Tariff
+    description: >-
+      The rate plan under which a UsagePoint is billed by its utility.
+      Types include flat, tiered, time-of-use, real-time, demand, and
+      net-metering.
+
+  - term: TOU
+    description: >-
+      Time-of-Use — tariff in which price varies by time of day,
+      day of week, and season.
+
+  - term: NetMetering
+    description: >-
+      Billing arrangement in which a customer with on-site generation
+      receives credit for energy exported to the grid, netted against
+      energy imported.
+
+  - term: SolarIrradiance
+    description: >-
+      Solar power per unit area incident on a surface. Includes GHI
+      (global horizontal), DNI (direct normal), DHI (diffuse
+      horizontal). Drives PV generation forecasts.
+
+  - term: NSRDB
+    description: >-
+      National Solar Radiation Database — NREL-maintained solar
+      irradiance dataset and API.
+
+  - term: PVWatts
+    description: >-
+      NREL API that estimates the energy production of a grid-connected
+      photovoltaic system based on location and system parameters.
+
+  - term: URDB
+    description: >-
+      Utility Rate Database — NREL-maintained dataset of US utility
+      rate tariffs, exposed via the NREL developer API.
+
+  - term: EIA
+    description: >-
+      U.S. Energy Information Administration — federal statistical
+      agency that publishes electricity, natural gas, petroleum, coal,
+      and nuclear data through the EIA Open Data API (APIv2).
+
+  - term: NREL
+    description: >-
+      National Renewable Energy Laboratory — DOE national lab that
+      operates the developer.nrel.gov API network.
+
+  - term: NWS
+    description: >-
+      National Weather Service — NOAA agency whose api.weather.gov
+      delivers free, no-auth GeoJSON forecasts, gridpoints, alerts,
+      and observations used widely in grid demand modelling.

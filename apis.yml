@@ -1,0 +1,289 @@
+aid: energy-utilities
+name: Energy and Utilities
+description: >-
+  Energy and Utilities is a topic profile in the API Evangelist Network
+  cataloging the API surfaces that move data across the modern electricity,
+  gas, and water value chain. It indexes utility data integration APIs,
+  grid and wholesale market operator APIs, federal energy data programs,
+  renewable energy research APIs, weather APIs that drive grid demand and
+  solar forecasting, EV charging interoperability protocols, and the
+  Green Button family of customer energy data standards. The repo
+  provides a baseline catalog plus shared semantics (JSON Schema,
+  JSON-LD, vocabulary, examples) for the meter reading / energy data
+  point that ties every one of these surfaces together.
+type: Index
+kind: topic
+position: Aggregator
+access: 3rd-Party
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: https://raw.githubusercontent.com/api-evangelist/energy-utilities/refs/heads/main/apis.yml
+created: '2025-05-11'
+modified: '2026-05-23'
+specificationVersion: '0.19'
+tags:
+  - Energy
+  - Utilities
+  - Electricity
+  - Grid
+  - Smart Meter
+  - Meter Data
+  - Green Button
+  - Demand Response
+  - DERMS
+  - EV Charging
+  - ISO/RTO
+  - Renewable Energy
+  - Solar
+  - Wind
+  - Weather
+  - Open Data
+apis:
+  - aid: energy-utilities:utility-integration
+    name: Utility Data Integration APIs
+    description: >-
+      Third-party platforms that authenticate against retail electric, gas,
+      and water utilities to retrieve customer meter, interval, and billing
+      data on behalf of a consumer or business. These APIs collapse the
+      thousands of US utility back-office systems into a single REST
+      surface, typically aligned with the Green Button standard.
+    humanURL: https://utilityapi.com/
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    tags:
+      - Utility Data
+      - Meter Data
+      - Billing Data
+      - Green Button
+      - Authorization
+    properties:
+      - type: Documentation
+        url: https://utilityapi.com/docs
+      - type: Documentation
+        url: https://docs.bayou.energy/
+      - type: Documentation
+        url: https://docs.arcadia.com/
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/utilityapi/refs/heads/main/openapi/utilityapi-openapi.yml
+      - type: Reference
+        url: https://www.arcadia.com/arc
+  - aid: energy-utilities:iso-rto-markets
+    name: ISO and RTO Wholesale Market APIs
+    description: >-
+      Independent System Operators and Regional Transmission Organizations
+      publish locational marginal prices, load forecasts, generation mix,
+      ancillary services awards, and capacity market data through public
+      data portals and (where available) REST APIs. These are the primary
+      sources for wholesale electricity market data in North America.
+    humanURL: https://oasis.caiso.com/
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    tags:
+      - Wholesale Market
+      - LMP
+      - Grid Operator
+      - Load Forecast
+      - Ancillary Services
+    properties:
+      - type: Documentation
+        url: https://www.caiso.com/library/oasis-technical-specifications
+      - type: Documentation
+        url: https://developer.ercot.com/
+      - type: Reference
+        url: https://apiexplorer.ercot.com/
+      - type: Documentation
+        url: https://dataminer2.pjm.com/
+      - type: Reference
+        url: https://data-exchange.misoenergy.org/
+      - type: Reference
+        url: https://www.iso-ne.com/isoexpress/
+  - aid: energy-utilities:eia-open-data
+    name: EIA Open Data API
+    description: >-
+      The U.S. Energy Information Administration publishes time-series
+      data covering electricity, natural gas, petroleum, coal, nuclear
+      outages, renewables, and international energy through APIv2.
+      Datasets are organized by major energy category and accessed with
+      an api.data.gov key.
+    humanURL: https://www.eia.gov/opendata/
+    baseURL: https://api.eia.gov/v2
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    tags:
+      - Open Data
+      - Federal
+      - Electricity
+      - Natural Gas
+      - Petroleum
+      - Time Series
+    properties:
+      - type: Documentation
+        url: https://www.eia.gov/opendata/documentation.php
+      - type: SignUp
+        url: https://www.eia.gov/opendata/register.php
+      - type: Reference
+        url: https://www.eia.gov/opendata/browser/
+  - aid: energy-utilities:nrel-developer
+    name: NREL Developer Network APIs
+    description: >-
+      The National Renewable Energy Laboratory exposes a developer network
+      of REST APIs covering solar resource (NSRDB, PVWatts), wind
+      resource, alternative fuel stations, utility rates (URDB),
+      transportation, buildings, and geothermal data. Authentication uses
+      an api.data.gov key shared with other federal data programs.
+    humanURL: https://developer.nrel.gov/
+    baseURL: https://developer.nrel.gov/api
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    tags:
+      - Renewable Energy
+      - Solar
+      - Wind
+      - Utility Rates
+      - Alternative Fuel
+    properties:
+      - type: Documentation
+        url: https://developer.nrel.gov/docs/
+      - type: SignUp
+        url: https://developer.nrel.gov/signup/
+      - type: Reference
+        url: https://nsrdb.nrel.gov/
+  - aid: energy-utilities:weather-grid
+    name: Weather APIs for Grid and Solar
+    description: >-
+      Weather APIs that feed grid-demand modelling, renewable generation
+      forecasts, and outage operations. Includes the National Weather
+      Service public API (no authentication, GeoJSON), OpenWeather solar
+      irradiance and panel-output products, and commercial providers
+      offering historical and predictive weather data used by utilities,
+      ISOs, and energy traders.
+    humanURL: https://api.weather.gov/
+    baseURL: https://api.weather.gov
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    tags:
+      - Weather
+      - Solar Irradiance
+      - Forecast
+      - GeoJSON
+      - Grid Demand
+    properties:
+      - type: Documentation
+        url: https://www.weather.gov/documentation/services-web-api
+      - type: Documentation
+        url: https://openweathermap.org/api/solar-energy-prediction
+      - type: Documentation
+        url: https://openweathermap.org/api/one-call-3
+  - aid: energy-utilities:ev-charging-interop
+    name: EV Charging Interoperability Protocols
+    description: >-
+      Open protocols that govern communication between EV charging
+      stations, charging management systems, and roaming hubs. OCPP is
+      the charger-to-back-office protocol from the Open Charge Alliance.
+      OCPI is the back-office-to-back-office roaming protocol. ISO 15118
+      handles vehicle-to-charger plug-and-charge. These specifications
+      are the API contract for the EV charging network.
+    humanURL: https://openchargealliance.org/protocols/open-charge-point-protocol/
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    tags:
+      - EV Charging
+      - OCPP
+      - OCPI
+      - Roaming
+      - Smart Charging
+    properties:
+      - type: Documentation
+        url: https://openchargealliance.org/protocols/open-charge-point-protocol/
+      - type: Documentation
+        url: https://evroaming.org/ocpi-protocol/
+      - type: Repository
+        url: https://github.com/ocpi/ocpi
+      - type: Repository
+        url: https://github.com/openchargealliance
+  - aid: energy-utilities:openadr
+    name: OpenADR Demand Response
+    description: >-
+      OpenADR is an open, two-way information exchange model and Smart
+      Grid standard for automating demand response and orchestrating
+      distributed energy resources. The OpenADR Alliance publishes
+      profile specifications, schema files, sample payloads, and test
+      plans for utilities, aggregators, and DER vendors. OpenADR 3.0 is
+      the current generation.
+    humanURL: https://www.openadr.org/
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    tags:
+      - Demand Response
+      - DER
+      - Smart Grid
+      - Standard
+    properties:
+      - type: Documentation
+        url: https://www.openadr.org/specification
+      - type: Reference
+        url: https://www.openadr.org/openadr-30
+  - aid: energy-utilities:green-button
+    name: Green Button (CMD / DMD / ESPI / CDS)
+    description: >-
+      Green Button is the consumer energy data standard for utilities and
+      third-party solution providers. Connect My Data (CMD) is the
+      machine-to-machine sharing flow. Download My Data (DMD) is the
+      user-initiated export flow. The Energy Services Provider Interface
+      (ESPI) defines the underlying REST and Atom payloads (UsagePoint,
+      MeterReading, IntervalBlock, ReadingType). The Consumer Data
+      Specification (CDS) is the working group's next-generation profile.
+    humanURL: https://www.greenbuttonalliance.org/
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    tags:
+      - Green Button
+      - ESPI
+      - CDS
+      - Consumer Data
+      - Authorization
+      - OAuth2
+    properties:
+      - type: Documentation
+        url: https://greenbuttonalliance.github.io/OpenESPI-GreenButton-API-Documentation/API/
+      - type: Repository
+        url: https://github.com/GreenButtonAlliance
+      - type: Reference
+        url: https://www.greenbuttonalliance.org/developer-resources
+  - aid: energy-utilities:derms
+    name: Distributed Energy Resource Management APIs
+    description: >-
+      DERMS platforms aggregate, monitor, dispatch, and optimize
+      distributed energy resources such as rooftop solar, behind-the-meter
+      batteries, EV chargers, and controllable loads. DERMS API surfaces
+      typically wrap OpenADR for event signaling, IEEE 2030.5 (SEP 2.0)
+      for device-level control, and proprietary REST APIs for telemetry,
+      enrollment, and settlement.
+    humanURL: https://www.openadr.org/
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    tags:
+      - DERMS
+      - DER
+      - Aggregation
+      - VPP
+      - IEEE 2030.5
+    properties:
+      - type: Reference
+        url: https://standards.ieee.org/ieee/2030.5/5897/
+      - type: Reference
+        url: https://www.openadr.org/openadr-30
+common:
+  - type: TopicPage
+    url: https://apievangelist.com/topics/energy-utilities/
+  - type: Website
+    url: https://apievangelist.com/
+  - type: Network
+    url: https://network.apievangelist.com/
+  - type: JSONLD
+    url: https://raw.githubusercontent.com/api-evangelist/energy-utilities/refs/heads/main/json-ld/energy-utilities-context.jsonld
+  - type: JSONSchema
+    url: https://raw.githubusercontent.com/api-evangelist/energy-utilities/refs/heads/main/json-schema/energy-utilities-meter-reading-schema.json
+  - type: JSONSchema
+    url: https://raw.githubusercontent.com/api-evangelist/energy-utilities/refs/heads/main/json-schema/energy-utilities-energy-data-point-schema.json
+  - type: JSONSchema
+    url: https://raw.githubusercontent.com/api-evangelist/energy-utilities/refs/heads/main/json-schema/energy-utilities-usage-point-schema.json
+  - type: JSONStructure
+    url: https://raw.githubusercontent.com/api-evangelist/energy-utilities/refs/heads/main/json-structure/energy-utilities-meter-reading-structure.json
+  - type: Vocabulary
+    url: https://raw.githubusercontent.com/api-evangelist/energy-utilities/refs/heads/main/vocabulary/energy-utilities-vocabulary.yml
+  - type: Examples
+    url: https://raw.githubusercontent.com/api-evangelist/energy-utilities/refs/heads/main/examples/
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

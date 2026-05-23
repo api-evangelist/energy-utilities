@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/energy-utilities/refs/heads/main/json-schema/energy-utilities-usage-point-schema.json",
+  "title": "UsagePoint",
+  "description": "A service delivery point — the location and contract at which a utility provides commodity service to a customer. Aligned with the Green Button ESPI UsagePoint concept and broadened to cover gas, water, and steam. UsagePoint is the parent record under which MeterReading and EnergyDataPoint observations are grouped.",
+  "type": "object",
+  "required": [
+    "id",
+    "serviceCategory"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Provider-scoped identifier for this service delivery point."
+    },
+    "externalId": {
+      "type": "string",
+      "description": "Utility-side identifier (e.g., service agreement number, account number, SAID, premise ID)."
+    },
+    "serviceCategory": {
+      "type": "string",
+      "description": "Commodity served at this point.",
+      "enum": [
+        "electricity",
+        "natural-gas",
+        "water",
+        "steam",
+        "thermal",
+        "wastewater"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "description": "Lifecycle status of the service delivery point.",
+      "enum": [
+        "active",
+        "inactive",
+        "pending",
+        "terminated",
+        "off"
+      ]
+    },
+    "customer": {
+      "type": "object",
+      "description": "Customer of record for this UsagePoint. Personally identifiable fields are optional and should only appear with proper authorization.",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "type": { "type": "string", "enum": ["residential", "commercial", "industrial", "agricultural", "municipal"] }
+      },
+      "additionalProperties": false
+    },
+    "premise": {
+      "type": "object",
+      "description": "Physical address of the service delivery point.",
+      "properties": {
+        "streetAddress": { "type": "string" },
+        "city": { "type": "string" },
+        "region": { "type": "string", "description": "State / province / region code." },
+        "postalCode": { "type": "string" },
+        "country": { "type": "string", "description": "ISO 3166-1 alpha-2 country code." },
+        "latitude": { "type": "number", "minimum": -90, "maximum": 90 },
+        "longitude": { "type": "number", "minimum": -180, "maximum": 180 }
+      },
+      "additionalProperties": false
+    },
+    "utility": {
+      "type": "object",
+      "description": "Retail utility serving this UsagePoint.",
+      "properties": {
+        "id": { "type": "string", "description": "Utility identifier in the source system (e.g., NREL URDB utility_id, UtilityAPI utility key)." },
+        "name": { "type": "string" },
+        "country": { "type": "string" },
+        "region": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "tariff": {
+      "type": "object",
+      "description": "Active rate plan at the UsagePoint.",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "type": { "type": "string", "enum": ["flat", "tiered", "time-of-use", "real-time", "demand", "net-metering"] },
+        "currency": { "type": "string", "description": "ISO 4217 currency code." }
+      },
+      "additionalProperties": false
+    },
+    "meter": {
+      "type": "object",
+      "description": "Physical meter currently associated with the UsagePoint.",
+      "properties": {
+        "id": { "type": "string" },
+        "serialNumber": { "type": "string" },
+        "manufacturer": { "type": "string" },
+        "ami": { "type": "boolean", "description": "True if the meter is an Advanced Metering Infrastructure (smart) meter." },
+        "intervalSeconds": { "type": "integer", "minimum": 0 }
+      },
+      "additionalProperties": false
+    },
+    "der": {
+      "type": "array",
+      "description": "Distributed energy resources installed behind this UsagePoint (PV, storage, EV charger, controllable load).",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "type": { "type": "string", "enum": ["solar-pv", "battery-storage", "ev-charger", "controllable-load", "wind", "chp", "fuel-cell"] },
+          "capacityKw": { "type": "number", "minimum": 0 }
+        },
+        "required": ["type"],
+        "additionalProperties": false
+      }
+    },
+    "providerId": {
+      "type": "string",
+      "description": "Identifier of the API or system delivering this UsagePoint record."
+    },
+    "authorizationId": {
+      "type": "string",
+      "description": "Identifier for the customer authorization (OAuth grant, signed form, Green Button CMD authorization) under which this record is accessible."
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Provider-specific extensions.",
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": false
+}

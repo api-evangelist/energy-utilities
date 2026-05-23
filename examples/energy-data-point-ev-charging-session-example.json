@@ -1,0 +1,25 @@
+{
+  "$schema": "../json-schema/energy-utilities-energy-data-point-schema.json",
+  "series": "ocpi.sessions.energy",
+  "timestamp": "2026-05-22T17:32:11Z",
+  "intervalSeconds": 1827,
+  "value": 12.4,
+  "unit": "kWh",
+  "kind": "session-energy",
+  "location": {
+    "latitude": 37.7749,
+    "longitude": -122.4194,
+    "utility": "Pacific Gas and Electric"
+  },
+  "asset": {
+    "id": "session-2bf3-9c12",
+    "type": "ev-session"
+  },
+  "quality": "valid",
+  "source": {
+    "providerId": "ocpi",
+    "endpoint": "/2.3.0/sessions",
+    "retrievedAt": "2026-05-22T18:03:00Z"
+  },
+  "tags": ["ev", "charging-session", "dc-fast"]
+}

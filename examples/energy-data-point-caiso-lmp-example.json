@@ -1,0 +1,23 @@
+{
+  "$schema": "../json-schema/energy-utilities-energy-data-point-schema.json",
+  "series": "caiso.oasis.lmp.SP15.rtm.5m",
+  "timestamp": "2026-05-22T19:05:00Z",
+  "intervalSeconds": 300,
+  "value": 42.18,
+  "unit": "USD/MWh",
+  "kind": "price",
+  "location": {
+    "marketNode": "TH_SP15_GEN-APND",
+    "balancingAuthority": "CISO"
+  },
+  "asset": {
+    "type": "market-node"
+  },
+  "quality": "final",
+  "source": {
+    "providerId": "caiso",
+    "endpoint": "PRC_INTVL_LMP",
+    "retrievedAt": "2026-05-22T19:06:12Z"
+  },
+  "tags": ["lmp", "rtm", "wholesale"]
+}

@@ -1,0 +1,160 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/energy-utilities/refs/heads/main/json-schema/energy-utilities-energy-data-point-schema.json",
+  "title": "EnergyDataPoint",
+  "description": "A generalized energy data point — the single shape used to carry any quantitative observation in the energy and utilities domain. Covers retail meter intervals, wholesale-market LMP prints, EIA time-series observations, NREL solar irradiance samples, weather-driven load drivers, EV-charging session telemetry, and DERMS device telemetry. Where a MeterReading captures a specific physical meter's measurement, an EnergyDataPoint is the broader observation envelope used across providers.",
+  "type": "object",
+  "required": [
+    "series",
+    "timestamp",
+    "value",
+    "unit"
+  ],
+  "properties": {
+    "series": {
+      "type": "string",
+      "description": "Provider-qualified time-series identifier. Examples: 'eia.electricity.rto.region-data.D.NYIS', 'caiso.lmp.SP15.5m', 'utilityapi.intervals.kwh', 'nrel.nsrdb.ghi'."
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "UTC timestamp marking the start of the observation interval (ISO 8601)."
+    },
+    "intervalSeconds": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Length of the observation interval in seconds. 0 indicates an instantaneous reading. Common values: 60, 300, 900, 3600, 86400."
+    },
+    "value": {
+      "type": "number",
+      "description": "Numeric value of the observation, expressed in the units given by unit."
+    },
+    "unit": {
+      "type": "string",
+      "description": "Unit of measure for value. Includes energy, power, price, irradiance, temperature, and volumetric units commonly emitted by APIs in this catalog.",
+      "enum": [
+        "Wh",
+        "kWh",
+        "MWh",
+        "GWh",
+        "W",
+        "kW",
+        "MW",
+        "GW",
+        "USD/MWh",
+        "USD/kWh",
+        "cents/kWh",
+        "USD/MMBtu",
+        "USD/therm",
+        "W/m2",
+        "Wh/m2",
+        "celsius",
+        "fahrenheit",
+        "m/s",
+        "mph",
+        "ccf",
+        "therms",
+        "MMBtu",
+        "m3",
+        "gallons",
+        "percent",
+        "count"
+      ]
+    },
+    "kind": {
+      "type": "string",
+      "description": "What kind of measurement this is, independent of the unit. Helps consumers route a value through the right model.",
+      "enum": [
+        "consumption",
+        "generation",
+        "demand",
+        "price",
+        "load",
+        "forecast",
+        "irradiance",
+        "wind-speed",
+        "temperature",
+        "humidity",
+        "outage-count",
+        "soc",
+        "session-energy"
+      ]
+    },
+    "location": {
+      "type": "object",
+      "description": "Spatial reference for the data point.",
+      "properties": {
+        "latitude": { "type": "number", "minimum": -90, "maximum": 90 },
+        "longitude": { "type": "number", "minimum": -180, "maximum": 180 },
+        "marketNode": { "type": "string", "description": "ISO/RTO pricing node, hub, or zone (e.g., CAISO SP15, ERCOT HB_HOUSTON, PJM WESTERN HUB)." },
+        "balancingAuthority": { "type": "string", "description": "NERC balancing authority code (e.g., CISO, ERCO, PJM, MISO, ISNE, NYIS, BPAT)." },
+        "utility": { "type": "string", "description": "Retail utility name where applicable." },
+        "serviceTerritory": { "type": "string", "description": "Utility service territory or DSO operating area." },
+        "geohash": { "type": "string", "description": "Optional geohash for spatial bucketing." }
+      },
+      "additionalProperties": false
+    },
+    "asset": {
+      "type": "object",
+      "description": "Physical or logical asset the observation belongs to (meter, charger, inverter, generator, sensor).",
+      "properties": {
+        "id": { "type": "string" },
+        "type": {
+          "type": "string",
+          "enum": [
+            "meter",
+            "submeter",
+            "inverter",
+            "battery",
+            "ev-charger",
+            "ev-session",
+            "generator",
+            "load",
+            "sensor",
+            "weather-station",
+            "balancing-authority",
+            "market-node"
+          ]
+        },
+        "manufacturer": { "type": "string" },
+        "model": { "type": "string" }
+      },
+      "required": ["type"],
+      "additionalProperties": false
+    },
+    "quality": {
+      "type": "string",
+      "description": "Data quality marker.",
+      "enum": [
+        "valid",
+        "estimated",
+        "missing",
+        "questionable",
+        "preliminary",
+        "final"
+      ]
+    },
+    "source": {
+      "type": "object",
+      "description": "Provenance of the observation — which API delivered it.",
+      "properties": {
+        "providerId": { "type": "string", "description": "Provider key from this catalog (e.g., eia, caiso, ercot, pjm, nrel, utilityapi, bayou, arcadia, nws, openweather, openadr, ocpi)." },
+        "endpoint": { "type": "string", "description": "Specific endpoint or report identifier the data came from." },
+        "retrievedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["providerId"],
+      "additionalProperties": false
+    },
+    "tags": {
+      "type": "array",
+      "description": "Free-form tags for filtering and rollup.",
+      "items": { "type": "string" }
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Provider-specific extensions that do not map into the core envelope.",
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": false
+}

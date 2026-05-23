@@ -1,0 +1,153 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "eu": "https://apievangelist.com/topics/energy-utilities/ns/",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "qudt": "http://qudt.org/schema/qudt/",
+    "unit": "http://qudt.org/vocab/unit/",
+    "espi": "http://naesb.org/espi#",
+
+    "MeterReading": {
+      "@id": "eu:MeterReading",
+      "@context": {
+        "id": "eu:id",
+        "usagePointId": {
+          "@id": "eu:usagePoint",
+          "@type": "@id"
+        },
+        "meterId": "eu:meter",
+        "readingType": "eu:readingType",
+        "intervalStart": {
+          "@id": "eu:intervalStart",
+          "@type": "xsd:dateTime"
+        },
+        "intervalLength": {
+          "@id": "eu:intervalLengthSeconds",
+          "@type": "xsd:integer"
+        },
+        "value": {
+          "@id": "qudt:numericValue",
+          "@type": "xsd:decimal"
+        },
+        "unit": {
+          "@id": "qudt:unit",
+          "@type": "@id"
+        },
+        "quality": "eu:quality",
+        "source": "eu:source",
+        "powerOfTenMultiplier": {
+          "@id": "espi:powerOfTenMultiplier",
+          "@type": "xsd:integer"
+        },
+        "tariffRider": "eu:tariffRider",
+        "providerId": "eu:providerId"
+      }
+    },
+
+    "EnergyDataPoint": {
+      "@id": "eu:EnergyDataPoint",
+      "@context": {
+        "series": "eu:series",
+        "timestamp": {
+          "@id": "eu:timestamp",
+          "@type": "xsd:dateTime"
+        },
+        "intervalSeconds": {
+          "@id": "eu:intervalLengthSeconds",
+          "@type": "xsd:integer"
+        },
+        "value": {
+          "@id": "qudt:numericValue",
+          "@type": "xsd:decimal"
+        },
+        "unit": {
+          "@id": "qudt:unit",
+          "@type": "@id"
+        },
+        "kind": "eu:kind",
+        "location": "eu:location",
+        "asset": "eu:asset",
+        "quality": "eu:quality",
+        "source": "eu:source",
+        "tags": "schema:keywords"
+      }
+    },
+
+    "UsagePoint": {
+      "@id": "eu:UsagePoint",
+      "@context": {
+        "id": "eu:id",
+        "externalId": "schema:identifier",
+        "serviceCategory": "eu:serviceCategory",
+        "status": "schema:actionStatus",
+        "customer": {
+          "@id": "schema:customer",
+          "@type": "@id"
+        },
+        "premise": {
+          "@id": "schema:address",
+          "@type": "schema:PostalAddress"
+        },
+        "utility": {
+          "@id": "schema:provider",
+          "@type": "@id"
+        },
+        "tariff": "eu:tariff",
+        "meter": "eu:meter",
+        "der": "eu:der",
+        "authorizationId": "eu:authorizationId",
+        "providerId": "eu:providerId"
+      }
+    },
+
+    "Location": {
+      "@id": "eu:Location",
+      "@context": {
+        "latitude": "schema:latitude",
+        "longitude": "schema:longitude",
+        "marketNode": "eu:marketNode",
+        "balancingAuthority": "eu:balancingAuthority",
+        "utility": "schema:provider",
+        "serviceTerritory": "eu:serviceTerritory",
+        "geohash": "eu:geohash"
+      }
+    },
+
+    "Asset": {
+      "@id": "eu:Asset",
+      "@context": {
+        "id": "eu:id",
+        "type": "eu:assetType",
+        "manufacturer": "schema:manufacturer",
+        "model": "schema:model"
+      }
+    },
+
+    "Source": {
+      "@id": "eu:Source",
+      "@context": {
+        "providerId": "eu:providerId",
+        "endpoint": {
+          "@id": "schema:url",
+          "@type": "@id"
+        },
+        "retrievedAt": {
+          "@id": "dcterms:date",
+          "@type": "xsd:dateTime"
+        }
+      }
+    },
+
+    "Tariff": {
+      "@id": "eu:Tariff",
+      "@context": {
+        "id": "eu:id",
+        "name": "schema:name",
+        "type": "eu:tariffType",
+        "currency": "schema:priceCurrency"
+      }
+    }
+  }
+}

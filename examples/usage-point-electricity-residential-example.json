@@ -1,0 +1,53 @@
+{
+  "$schema": "../json-schema/energy-utilities-usage-point-schema.json",
+  "id": "utilityapi:meter-512873",
+  "externalId": "PGE-SA-1234567890",
+  "serviceCategory": "electricity",
+  "status": "active",
+  "customer": {
+    "id": "cust-abc-001",
+    "type": "residential"
+  },
+  "premise": {
+    "streetAddress": "1 Telegraph Hill Blvd",
+    "city": "San Francisco",
+    "region": "CA",
+    "postalCode": "94133",
+    "country": "US",
+    "latitude": 37.8023,
+    "longitude": -122.4058
+  },
+  "utility": {
+    "id": "pge",
+    "name": "Pacific Gas and Electric",
+    "country": "US",
+    "region": "CA"
+  },
+  "tariff": {
+    "id": "E-TOU-C",
+    "name": "Residential Time-of-Use Option C",
+    "type": "time-of-use",
+    "currency": "USD"
+  },
+  "meter": {
+    "id": "smart-meter-512873",
+    "serialNumber": "GE-I210+C-0089231",
+    "manufacturer": "GE",
+    "ami": true,
+    "intervalSeconds": 900
+  },
+  "der": [
+    {
+      "id": "pv-001",
+      "type": "solar-pv",
+      "capacityKw": 6.4
+    },
+    {
+      "id": "batt-001",
+      "type": "battery-storage",
+      "capacityKw": 5.0
+    }
+  ],
+  "providerId": "utilityapi",
+  "authorizationId": "auth-9c2f-7831"
+}

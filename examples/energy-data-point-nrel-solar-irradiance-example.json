@@ -1,0 +1,24 @@
+{
+  "$schema": "../json-schema/energy-utilities-energy-data-point-schema.json",
+  "series": "nrel.nsrdb.ghi.tmy",
+  "timestamp": "2026-05-22T19:00:00Z",
+  "intervalSeconds": 3600,
+  "value": 812,
+  "unit": "W/m2",
+  "kind": "irradiance",
+  "location": {
+    "latitude": 39.74,
+    "longitude": -105.18
+  },
+  "asset": {
+    "type": "weather-station",
+    "model": "NSRDB Physical Solar Model 3"
+  },
+  "quality": "final",
+  "source": {
+    "providerId": "nrel",
+    "endpoint": "/api/nsrdb/v2/solar/psm3-2-2-download",
+    "retrievedAt": "2026-05-22T19:05:00Z"
+  },
+  "tags": ["solar", "ghi", "nsrdb"]
+}

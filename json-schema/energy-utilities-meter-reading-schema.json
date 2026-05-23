@@ -1,0 +1,125 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/energy-utilities/refs/heads/main/json-schema/energy-utilities-meter-reading-schema.json",
+  "title": "MeterReading",
+  "description": "A single point-in-time or interval-based reading captured by a utility meter. Generalizes the Green Button ESPI MeterReading / IntervalReading model so the same shape can carry electricity, natural gas, and water measurements from a retail utility, a third-party integrator (UtilityAPI, Bayou, Arcadia), or an AMI back-office.",
+  "type": "object",
+  "required": [
+    "id",
+    "usagePointId",
+    "readingType",
+    "intervalStart",
+    "intervalLength",
+    "value",
+    "unit"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Provider-scoped identifier for this reading. Stable across re-pulls of the same meter interval."
+    },
+    "usagePointId": {
+      "type": "string",
+      "description": "Reference to the UsagePoint (meter / service delivery point) that produced this reading."
+    },
+    "meterId": {
+      "type": "string",
+      "description": "Optional reference to the physical meter device when a UsagePoint is served by more than one meter over time."
+    },
+    "readingType": {
+      "type": "string",
+      "description": "Semantic classification of what was measured. Aligned with the ESPI ReadingType commodity / measurement-kind taxonomy.",
+      "enum": [
+        "electricity.usage",
+        "electricity.demand",
+        "electricity.delivered",
+        "electricity.received",
+        "electricity.net",
+        "electricity.reactive",
+        "natural-gas.usage",
+        "water.usage",
+        "steam.usage",
+        "thermal.usage"
+      ]
+    },
+    "intervalStart": {
+      "type": "string",
+      "format": "date-time",
+      "description": "UTC start of the measurement interval (ISO 8601). For instantaneous readings, intervalStart is the measurement timestamp."
+    },
+    "intervalLength": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Duration of the interval in seconds. 0 indicates an instantaneous reading (no integration window). Common values: 900 (15 min), 3600 (1 hour), 86400 (1 day)."
+    },
+    "value": {
+      "type": "number",
+      "description": "Measured quantity in the units identified by unit. Negative values are allowed for net-metered flows where generation exceeds consumption."
+    },
+    "unit": {
+      "type": "string",
+      "description": "Unit of measure. SI / industry-standard abbreviations.",
+      "enum": [
+        "Wh",
+        "kWh",
+        "MWh",
+        "W",
+        "kW",
+        "MW",
+        "VARh",
+        "kVARh",
+        "VA",
+        "kVA",
+        "ccf",
+        "therms",
+        "MMBtu",
+        "m3",
+        "gallons",
+        "liters"
+      ]
+    },
+    "quality": {
+      "type": "string",
+      "description": "Data quality flag reflecting the meter or pipeline's confidence in the reading.",
+      "enum": [
+        "valid",
+        "estimated",
+        "missing",
+        "questionable",
+        "raw",
+        "validated",
+        "edited"
+      ]
+    },
+    "source": {
+      "type": "string",
+      "description": "Origin of the reading. Helps consumers distinguish AMI smart-meter data from manual reads or third-party estimates.",
+      "enum": [
+        "ami",
+        "amr",
+        "manual",
+        "estimated",
+        "third-party",
+        "green-button"
+      ]
+    },
+    "powerOfTenMultiplier": {
+      "type": "integer",
+      "description": "Power-of-ten multiplier applied to value to recover the raw measurement, mirroring the ESPI ReadingType.powerOfTenMultiplier field. Optional; default 0 (no scaling)."
+    },
+    "tariffRider": {
+      "type": "string",
+      "description": "Optional tariff rider, time-of-use bucket, or rate code under which the reading was metered."
+    },
+    "providerId": {
+      "type": "string",
+      "description": "Identifier of the API or system that delivered the reading (e.g. utilityapi, bayou, arcadia, espi)."
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Provider-specific extensions that do not map into the core meter reading model.",
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": false
+}

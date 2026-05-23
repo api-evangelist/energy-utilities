@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-structure.org/meta/extended/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/energy-utilities/refs/heads/main/json-structure/energy-utilities-meter-reading-structure.json",
+  "name": "MeterReading",
+  "type": "object",
+  "description": "JSON Structure representation of a meter reading in the energy-utilities topic catalog.",
+  "properties": {
+    "id": { "type": "string", "description": "Provider-scoped identifier for this reading." },
+    "usagePointId": { "type": "string", "description": "Reference to the UsagePoint that produced this reading." },
+    "meterId": { "type": "string", "description": "Optional physical meter identifier." },
+    "readingType": {
+      "type": "string",
+      "description": "Semantic classification aligned with ESPI ReadingType.",
+      "enum": [
+        "electricity.usage",
+        "electricity.demand",
+        "electricity.delivered",
+        "electricity.received",
+        "electricity.net",
+        "electricity.reactive",
+        "natural-gas.usage",
+        "water.usage",
+        "steam.usage",
+        "thermal.usage"
+      ]
+    },
+    "intervalStart": { "type": "string", "format": "date-time", "description": "UTC start of the measurement interval." },
+    "intervalLength": { "type": "int32", "description": "Duration of the interval in seconds. 0 means instantaneous." },
+    "value": { "type": "decimal", "description": "Measured quantity in the units identified by unit." },
+    "unit": {
+      "type": "string",
+      "description": "Unit of measure.",
+      "enum": ["Wh", "kWh", "MWh", "W", "kW", "MW", "VARh", "kVARh", "VA", "kVA", "ccf", "therms", "MMBtu", "m3", "gallons", "liters"]
+    },
+    "quality": {
+      "type": "string",
+      "enum": ["valid", "estimated", "missing", "questionable", "raw", "validated", "edited"]
+    },
+    "source": {
+      "type": "string",
+      "enum": ["ami", "amr", "manual", "estimated", "third-party", "green-button"]
+    },
+    "powerOfTenMultiplier": { "type": "int32" },
+    "tariffRider": { "type": "string" },
+    "providerId": { "type": "string" }
+  },
+  "required": [
+    "id",
+    "usagePointId",
+    "readingType",
+    "intervalStart",
+    "intervalLength",
+    "value",
+    "unit"
+  ]
+}
