@@ -15,7 +15,7 @@ type: Index
 kind: topic
 position: Aggregator
 access: 3rd-Party
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/energy-utilities/refs/heads/main/apis.yml
 created: '2025-05-11'
 modified: '2026-05-23'
@@ -47,7 +47,7 @@ apis:
       thousands of US utility back-office systems into a single REST
       surface, typically aligned with the Green Button standard.
     humanURL: https://utilityapi.com/
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     tags:
       - Utility Data
       - Meter Data
@@ -74,7 +74,7 @@ apis:
       data portals and (where available) REST APIs. These are the primary
       sources for wholesale electricity market data in North America.
     humanURL: https://oasis.caiso.com/
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     tags:
       - Wholesale Market
       - LMP
@@ -104,7 +104,7 @@ apis:
       an api.data.gov key.
     humanURL: https://www.eia.gov/opendata/
     baseURL: https://api.eia.gov/v2
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     tags:
       - Open Data
       - Federal
@@ -129,7 +129,7 @@ apis:
       an api.data.gov key shared with other federal data programs.
     humanURL: https://developer.nrel.gov/
     baseURL: https://developer.nrel.gov/api
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     tags:
       - Renewable Energy
       - Solar
@@ -154,7 +154,7 @@ apis:
       ISOs, and energy traders.
     humanURL: https://api.weather.gov/
     baseURL: https://api.weather.gov
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     tags:
       - Weather
       - Solar Irradiance
@@ -178,7 +178,7 @@ apis:
       handles vehicle-to-charger plug-and-charge. These specifications
       are the API contract for the EV charging network.
     humanURL: https://openchargealliance.org/protocols/open-charge-point-protocol/
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     tags:
       - EV Charging
       - OCPP
@@ -204,7 +204,7 @@ apis:
       plans for utilities, aggregators, and DER vendors. OpenADR 3.0 is
       the current generation.
     humanURL: https://www.openadr.org/
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     tags:
       - Demand Response
       - DER
@@ -226,7 +226,7 @@ apis:
       MeterReading, IntervalBlock, ReadingType). The Consumer Data
       Specification (CDS) is the working group's next-generation profile.
     humanURL: https://www.greenbuttonalliance.org/
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     tags:
       - Green Button
       - ESPI
@@ -251,7 +251,7 @@ apis:
       for device-level control, and proprietary REST APIs for telemetry,
       enrollment, and settlement.
     humanURL: https://www.openadr.org/
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     tags:
       - DERMS
       - DER
