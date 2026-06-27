@@ -115,7 +115,7 @@ apis:
     properties:
       - type: Documentation
         url: https://www.eia.gov/opendata/documentation.php
-      - type: SignUp
+      - type: Signup
         url: https://www.eia.gov/opendata/register.php
       - type: Reference
         url: https://www.eia.gov/opendata/browser/
@@ -139,7 +139,7 @@ apis:
     properties:
       - type: Documentation
         url: https://developer.nrel.gov/docs/
-      - type: SignUp
+      - type: Signup
         url: https://developer.nrel.gov/signup/
       - type: Reference
         url: https://nsrdb.nrel.gov/
