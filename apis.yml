@@ -264,6 +264,10 @@ apis:
       - type: Reference
         url: https://www.openadr.org/openadr-30
 common:
+  - type: DomainSecurity
+    url: security/energy-utilities-domain-security.yml
+  - type: Authentication
+    url: authentication/energy-utilities-authentication.yml
   - type: TopicPage
     url: https://apievangelist.com/topics/energy-utilities/
   - type: Website
