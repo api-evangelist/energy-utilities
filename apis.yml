@@ -264,6 +264,8 @@ apis:
       - type: Reference
         url: https://www.openadr.org/openadr-30
 common:
+  - type: AgenticAccess
+    url: agentic-access/energy-utilities-agentic-access.yml
   - type: DomainSecurity
     url: security/energy-utilities-domain-security.yml
   - type: Authentication
