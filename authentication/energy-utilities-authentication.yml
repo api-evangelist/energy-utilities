@@ -9,6 +9,6 @@ schemes:
   type: http
   scheme: bearer
   description: 'Use the Authorization header with the Bearer scheme and an UtilityAPI token,
-    e.g. `Authorization: Bearer API_TOKEN_HERE`.'
+    e.g. `Authorization: Bearer [example key]`.'
   sources:
   - openapi/energy-utilities-openapi.yml
