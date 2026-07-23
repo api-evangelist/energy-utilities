@@ -1,0 +1,43 @@
+openapi: 3.1.0
+info:
+  title: UtilityAPI REST Accounting API
+  description: 'UtilityAPI provides authorization, billing, and meter usage data integrations across US utility companies. The REST API supports customer authorization forms, meter and bill retrieval, interval usage data, accounting summaries, and webhook event listing. This OpenAPI captures the public v2 surface documented at https://utilityapi.com/docs.
+
+    '
+  version: 1.0.0
+  contact:
+    name: UtilityAPI
+    url: https://utilityapi.com/docs
+servers:
+- url: https://utilityapi.com/api/v2
+security:
+- bearer: []
+tags:
+- name: Accounting
+paths:
+  /accounting/billing-accounts:
+    get:
+      summary: List billing accounts
+      operationId: listBillingAccounts
+      tags:
+      - Accounting
+      responses:
+        '200':
+          description: Billing accounts
+  /accounting/billing-summaries:
+    get:
+      summary: List billing summaries
+      operationId: listBillingSummaries
+      tags:
+      - Accounting
+      responses:
+        '200':
+          description: Billing summaries
+components:
+  securitySchemes:
+    bearer:
+      type: http
+      scheme: bearer
+      description: 'Use the Authorization header with the Bearer scheme and an UtilityAPI token, e.g. `Authorization: Bearer API_TOKEN_HERE`.
+
+        '
