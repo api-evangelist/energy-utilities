@@ -1,0 +1,30 @@
+{
+  "provider": "energy-utilities",
+  "sources": [
+    "energy-utilities-accounting-api-openapi.yml",
+    "energy-utilities-authorizations-api-openapi.yml",
+    "energy-utilities-bills-api-openapi.yml",
+    "energy-utilities-events-api-openapi.yml",
+    "energy-utilities-files-api-openapi.yml",
+    "energy-utilities-forms-api-openapi.yml",
+    "energy-utilities-intervals-api-openapi.yml",
+    "energy-utilities-meters-api-openapi.yml",
+    "energy-utilities-templates-api-openapi.yml"
+  ],
+  "outputs": [
+    "energy-utilities-accounting-api-openapi.yml",
+    "energy-utilities-authorizations-api-openapi.yml",
+    "energy-utilities-bills-api-openapi.yml",
+    "energy-utilities-events-api-openapi.yml",
+    "energy-utilities-files-api-openapi.yml",
+    "energy-utilities-forms-api-openapi.yml",
+    "energy-utilities-intervals-api-openapi.yml",
+    "energy-utilities-meters-api-openapi.yml",
+    "energy-utilities-templates-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
