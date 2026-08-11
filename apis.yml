@@ -397,6 +397,12 @@ apis:
   - type: Reference
     url: https://www.arcadia.com/arc
 common:
+  - type: IssueTracker
+    url: https://github.com/ocpi/ocpi/issues
+  - type: Releases
+    url: https://github.com/ocpi/ocpi/releases
+  - type: ContributionGuide
+    url: https://github.com/ocpi/ocpi/blob/2.3.0/release/core/CONTRIBUTING.md
   - type: AgenticAccess
     url: agentic-access/energy-utilities-agentic-access.yml
   - type: DomainSecurity
