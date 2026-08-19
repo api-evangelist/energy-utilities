@@ -1,0 +1,61 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "UtilityAPI REST Accounting Forms API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Forms",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create authorization form",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://utilityapi.com/api/v2/forms",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create authorization form"
+        },
+        {
+          "info": {
+            "name": "Simulate form submission",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://utilityapi.com/api/v2/forms/:id/test-submit",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Simulate form submission"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

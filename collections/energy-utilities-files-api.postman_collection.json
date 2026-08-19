@@ -1,0 +1,106 @@
+{
+  "item": [
+    {
+      "id": "d4f6d613-c689-4e6f-b3d6-842bd535a072",
+      "name": "Files",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6e44b0ff-2310-4cd7-958a-5846fad01f7b",
+          "name": "List files",
+          "request": {
+            "name": "List files",
+            "description": {},
+            "url": {
+              "path": [
+                "files"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7717842f-4471-4eb1-b934-fb8ab00027d9",
+              "name": "Files",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "files"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://utilityapi.com/api/v2",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "95c9611d-a408-4239-92ab-93f6bc3ec4e5",
+    "name": "UtilityAPI REST Accounting Files API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "UtilityAPI provides authorization, billing, and meter usage data integrations across US utility companies. The REST API supports customer authorization forms, meter and bill retrieval, interval usage data, accounting summaries, and webhook event listing. This OpenAPI captures the public v2 surface documented at https://utilityapi.com/docs.\n\n\nContact Support:\n Name: UtilityAPI",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "UtilityAPI REST Accounting API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Accounting",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List billing accounts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://utilityapi.com/api/v2/accounting/billing-accounts"
+          },
+          "docs": "List billing accounts"
+        },
+        {
+          "info": {
+            "name": "List billing summaries",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://utilityapi.com/api/v2/accounting/billing-summaries"
+          },
+          "docs": "List billing summaries"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

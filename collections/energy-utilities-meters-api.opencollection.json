@@ -1,0 +1,62 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "UtilityAPI REST Accounting Meters API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Meters",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List meters",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://utilityapi.com/api/v2/meters",
+            "params": [
+              {
+                "name": "authorizations",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List meters"
+        },
+        {
+          "info": {
+            "name": "Initiate meter collection",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://utilityapi.com/api/v2/meters",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Initiate meter collection"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

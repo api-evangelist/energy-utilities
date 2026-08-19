@@ -1,0 +1,52 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "UtilityAPI REST Accounting Intervals API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Intervals",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List meter usage intervals",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://utilityapi.com/api/v2/intervals",
+            "params": [
+              {
+                "name": "meters",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "end",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List meter usage intervals"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,135 @@
+{
+  "item": [
+    {
+      "id": "43514b95-1526-406a-9d4d-92c97991b75e",
+      "name": "Intervals",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2f381aa3-248e-4c0d-85be-27f5bfc5e474",
+          "name": "List meter usage intervals",
+          "request": {
+            "name": "List meter usage intervals",
+            "description": {},
+            "url": {
+              "path": [
+                "intervals"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "meters",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "start",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "end",
+                  "value": "<dateTime>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ab92a963-62ff-4efe-95ee-d5d65ab85b72",
+              "name": "Intervals",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "intervals"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "meters",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "start",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "end",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://utilityapi.com/api/v2",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "ea37dc36-c3bf-44cb-8a29-ff5fcfc079e6",
+    "name": "UtilityAPI REST Accounting Intervals API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "UtilityAPI provides authorization, billing, and meter usage data integrations across US utility companies. The REST API supports customer authorization forms, meter and bill retrieval, interval usage data, accounting summaries, and webhook event listing. This OpenAPI captures the public v2 surface documented at https://utilityapi.com/docs.\n\n\nContact Support:\n Name: UtilityAPI",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "UtilityAPI REST Accounting Authorizations API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Authorizations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List authorizations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://utilityapi.com/api/v2/authorizations",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List authorizations"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
