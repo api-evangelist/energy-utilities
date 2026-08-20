@@ -43,6 +43,23 @@ tags:
   - Demand Response
   - DERMS
   - EV Charging
+  - ISO RTO
+  - Renewable Energy
+  - Solar
+  - Wind
+  - Weather
+  - Open Data
+tags_raw:
+  - Energy
+  - Utilities
+  - Electricity
+  - Grid
+  - Smart Meter
+  - Meter Data
+  - Green Button
+  - Demand Response
+  - DERMS
+  - EV Charging
   - ISO/RTO
   - Renewable Energy
   - Solar
@@ -206,6 +223,13 @@ apis:
   - CDS
   - Consumer Data
   - Authorization
+  - Authentication
+  tags_raw:
+  - Green Button
+  - ESPI
+  - CDS
+  - Consumer Data
+  - Authorization
   - OAuth2
   properties:
   - type: Documentation
@@ -294,6 +318,8 @@ apis:
   humanURL: https://utilityapi.com/
   baseURL: https://api.eia.gov/v2
   tags:
+  - Event
+  tags_raw:
   - Events
   properties:
   - type: OpenAPI
@@ -312,6 +338,8 @@ apis:
   humanURL: https://utilityapi.com/
   baseURL: https://api.eia.gov/v2
   tags:
+  - File
+  tags_raw:
   - Files
   properties:
   - type: OpenAPI
