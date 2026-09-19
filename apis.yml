@@ -215,6 +215,11 @@ apis:
   - Demand Response
   - DER
   - Smart Grid
+  - Standards
+  tags_raw:
+  - Demand Response
+  - DER
+  - Smart Grid
   - Standard
   properties:
   - type: Documentation
@@ -296,6 +301,8 @@ apis:
   humanURL: https://utilityapi.com/
   baseURL: https://api.eia.gov/v2
   tags:
+  - Authorization
+  tags_raw:
   - Authorizations
   properties:
   - type: OpenAPI
