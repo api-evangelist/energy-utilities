@@ -1,9 +1,7 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: UtilityAPI REST Accounting Intervals API
-  description: 'UtilityAPI provides authorization, billing, and meter usage data integrations across US utility companies. The REST API supports customer authorization forms, meter and bill retrieval, interval usage data, accounting summaries, and webhook event listing. This OpenAPI captures the public v2 surface documented at https://utilityapi.com/docs.
-
-    '
+  title: UtilityAPI REST Intervals API
+  description: UtilityAPI provides authorization, billing, and meter usage data integrations across US utility companies. The REST API supports customer authorization forms, meter and bill retrieval, interval usage data, accounting summaries, and webhook event listing. This OpenAPI captures the public v2 surface documented at https://utilityapi.com/docs.
   version: 1.0.0
   contact:
     name: UtilityAPI

@@ -1,15 +1,7 @@
 {
   "provider": "energy-utilities",
   "sources": [
-    "energy-utilities-accounting-api-openapi.yml",
-    "energy-utilities-authorizations-api-openapi.yml",
-    "energy-utilities-bills-api-openapi.yml",
-    "energy-utilities-events-api-openapi.yml",
-    "energy-utilities-files-api-openapi.yml",
-    "energy-utilities-forms-api-openapi.yml",
-    "energy-utilities-intervals-api-openapi.yml",
-    "energy-utilities-meters-api-openapi.yml",
-    "energy-utilities-templates-api-openapi.yml"
+    "_original/energy-utilities-openapi.yml"
   ],
   "outputs": [
     "energy-utilities-accounting-api-openapi.yml",
@@ -25,6 +17,29 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "energy-utilities-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "energy-utilities-openapi.yml: declared missing tag: Accounting",
+    "energy-utilities-openapi.yml: declared missing tag: Authorizations",
+    "energy-utilities-openapi.yml: declared missing tag: Bills",
+    "energy-utilities-openapi.yml: declared missing tag: Events",
+    "energy-utilities-openapi.yml: declared missing tag: Files",
+    "energy-utilities-openapi.yml: declared missing tag: Forms",
+    "energy-utilities-openapi.yml: declared missing tag: Intervals",
+    "energy-utilities-openapi.yml: declared missing tag: Meters",
+    "energy-utilities-openapi.yml: declared missing tag: Templates",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "energy-utilities-accounting-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "energy-utilities-authorizations-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "energy-utilities-bills-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "energy-utilities-events-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "energy-utilities-files-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "energy-utilities-forms-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "energy-utilities-intervals-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "energy-utilities-meters-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "energy-utilities-templates-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
